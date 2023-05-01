@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet"> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        body {
+            background: #2B323A;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section aside {
+            background-color: #fff;
+            padding: 20px;
+            width: 350px;
+            border-radius: 3px;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.5);
+        }
+
+        section aside h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #2B323A;
+            margin-bottom: 15px;
+        }
+
+        section aside p {
+            font-size: 16px;
+            text-align: center;
+            margin: 10px 0;
+            color: #555;
+            font-weight: normal;
+        }
+
+        section aside p a {
+            color: #0094e4;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: calc(100% - 20px);
+            font-size: 16px;
+            padding: 8px 10px;
+            margin: 8px 0;
+            color: #292929;
+            border: #c9c9c9 solid thin;
+            border-radius: 3px;
+            transition: 0.2s all ease-in-out;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            border-color: #0094e4;
+        }
+
+        button {
+            margin: 8px 0;
+            width: 100%;
+            border: none;
+            color: #fff;
+            background-color: #0094e4;
+            padding: 8px 0;
+            font-size: 18px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
+        }
+
+        button:hover {
+            background-color: #3a4149;
+        }
+
+        .form-group {
+            display: none;
+        }
+
+        .form-group.active {
+            display: block;
+        }
+        
+    </style>
+    <script>
+        const showPwd = () => {
+            document.getElementById('usr').classList.remove('active');
+            document.getElementById('pwd').classList.add('active');
+        }
+
+        const showUsr = () => {
+            document.getElementById('usr').classList.add('active');
+            document.getElementById('pwd').classList.remove('active');
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <aside>
+            <h1>User Login</h1>
+            <form action="">
+                <div id="usr" class="form-group active">
+                    <input type="text" placeholder="Username" />
+                    <button type="button" onclick="showPwd()">Continue &xrarr;</button>
+                    <p>Yet Register? <a href="">Sign Up</a></p>
+                </div>
+                <div id="pwd" class="form-group">
+                    <input type="password" placeholder="Password" />
+                    <button type="submit">Login</button>
+                    <p><a onclick="showUsr()">&xlarr; Back</a></p>
+                </div>
+            </form>
+        </aside>
+    </section>
+</body>
+</html>
